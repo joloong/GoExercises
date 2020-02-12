@@ -81,6 +81,10 @@ var defaultHandlerTmpl = `
   </body>
 </html>`
 
+// HandlerOption is a Functional Option.
+// Suggested Reading:
+// https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis
+// https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html
 type HandlerOption func(h *handler)
 
 func WithTemplate(t *template.Template) HandlerOption {
