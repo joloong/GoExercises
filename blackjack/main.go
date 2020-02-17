@@ -78,7 +78,7 @@ func Hit(gs GameState) GameState {
 	card, ret.Deck = draw(ret.Deck)
 	*hand = append(*hand, card)
 	if hand.Score() > 21 {
-		return Stand(ret)
+		ret.State = StateHandOver
 	}
 	return ret
 }
