@@ -103,6 +103,8 @@ func MoveStand(g *Game) {
 }
 
 func endHand(g *Game, ai AI) {
+	ai.Results([][]deck.Card{g.player}, g.dealer)
+
 	pScore, dScore := Score(g.player...), Score(g.dealer...)
 	switch {
 	case pScore > 21:
@@ -118,7 +120,7 @@ func endHand(g *Game, ai AI) {
 		fmt.Println("Draw!")
 	}
 	fmt.Println()
-	ai.Results([][]deck.Card{g.player}, g.dealer)
+
 	g.player = nil
 	g.dealer = nil
 }
